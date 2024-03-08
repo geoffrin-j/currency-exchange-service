@@ -1,11 +1,18 @@
 package com.example.microservices.currencyexchangeservice.controller.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.math.BigDecimal;
 
+@Entity
 public class CurrencyExchange {
-
+    @Id
     private Long id;
+    @Column(name = "currency_from")
     private String from;
+    @Column(name = "currency_to")
     private String to;
     private BigDecimal conversionMultiple;
 
@@ -53,7 +60,8 @@ public class CurrencyExchange {
     public void setConversionMultiple(BigDecimal conversionMultiple) {
         this.conversionMultiple = conversionMultiple;
     }
-    public String  getEnvironment() {
+
+    public String getEnvironment() {
         return environment;
     }
 
